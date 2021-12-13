@@ -6,14 +6,14 @@ unsigned short int bitstring1[9],bitstring2[9];
 void create();
 void unionofset();
 void intersectionofset();
-//void setdifference;
+void setdifference();
 void main()
 
 {
 int choice;
 while(1)
 {
-printf("\n 0.create 2 sets \n 1.union \n2.intersection \n3.set difference \n 4.exit");
+printf("\n 0.create 2 sets\n 1.union\n 2.intersection\n 3.set difference\n 4.exit");
 scanf("%d",&choice);
 switch(choice)
 {
@@ -23,8 +23,8 @@ case 1:unionofset();
 	break;
 case 2 :intersectionofset();
 	break;
-//case 3:setdifference();
-	//break;
+case 3:setdifference();
+	break;
 case 4:exit(0);
 default:printf("enter a valid choice");
 }
@@ -114,5 +114,18 @@ if(bitstring1[i]&bitstring2[i] == 1)
 {
 printf("%d",u[i]);
 }
+}
+}
+
+void setdifference()
+{
+printf("set difference");
+for(int i=0;i<9;++i)
+{
+if(bitstring2[i]&bitstring2[i] == 1)
+{
+continue;
+}
+printf("%d",u[i]);
 }
 }
